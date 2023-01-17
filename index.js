@@ -22,8 +22,8 @@ const supplyKey = PrivateKey.generateECDSA();
 async function main() {
 	//Create the NFT
 	let nftCreate = await new TokenCreateTransaction()
-		.setTokenName("love")
-		.setTokenSymbol("LOVEINAIR")
+		.setTokenName("THE Computer BOY")
+		.setTokenSymbol("The Thunder of winterland")
 		.setTokenType(TokenType.NonFungibleUnique)
 		.setDecimals(0)
 		.setInitialSupply(0)
@@ -41,9 +41,13 @@ async function main() {
     console.log(`- Created NFT with Token ID: ${tokenId} \n`);
 
 	
-	CID = ["QmWy96zWeyS1D5FFWhjYhRJdt251XTFbvE1AmPqZcP31gV"];
-
-	// Mint new NFT
+	
+	// CID = "ipfs://QmY4gCGS2DoGLvGW8sGeaxxggjYYPC385DpASiQJ8qNwFu";
+	CID = "ipfs://QmawqbzosvBJLunXQRH8QcA2xwfM6dPSK3nhqVpdR3Yump";
+	
+	
+    
+	// // Mint new NFT
 	let mintTx = await new TokenMintTransaction()
 		.setTokenId(tokenId)
         .setMaxTransactionFee(3)
@@ -57,6 +61,7 @@ async function main() {
 	let mintRx = await mintTxSubmit.getReceipt(client);
 	console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
 	
-	
+
+
 }
 main();
