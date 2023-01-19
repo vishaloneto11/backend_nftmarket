@@ -1,0 +1,16 @@
+{
+    "name": "The Computer Boy",
+	"description": "hii i computer boy solve things in detail manner will meet you geek",
+    "symobol": "COMBOY",
+	"image": "https://oneto11.mypinata.cloud/ipfs/QmTrFxW1ft7YEjC8pzczDvWTWoCs48cWMQx1dqaXdTem3D/1.jpg",
+    "properties": {
+        "gender":"M",
+        "face":"round",
+        "hair":"glassy",
+        "spacesuit":"metallic",
+        "accessories":"diamond",
+        "background":"space"
+
+        
+    }
+}

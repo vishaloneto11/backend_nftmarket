@@ -1,0 +1,16 @@
+{
+    "name": "The Princess of Kashmir",
+	"description": "listen ! i am princess of kashmir",
+    "symobol": "PKSH",
+	"image": "https://oneto11.mypinata.cloud/ipfs/QmTrFxW1ft7YEjC8pzczDvWTWoCs48cWMQx1dqaXdTem3D/2.jpg",
+    "properties": {
+        "gender":"F",
+        "face":"beautiful",
+        "hair":"brown",
+        "spacesuit":"volvet",
+        "accessories":"gold",
+        "background":"universe"
+
+        
+    }
+}

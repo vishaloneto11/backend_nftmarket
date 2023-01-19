@@ -12,7 +12,7 @@ const {
 	TokenAssociateTransaction,
 } = require("@hashgraph/sdk");
 
-// Configure accounts and client, and generate needed keys
+
 const operatorId = AccountId.fromString(process.env.OPERATOR_ID);
 const operatorKey = PrivateKey.fromStringECDSA(process.env.OPERATOR_PVKEY);
 const client = Client.forTestnet().setOperator(operatorId, operatorKey);
@@ -20,10 +20,10 @@ const client = Client.forTestnet().setOperator(operatorId, operatorKey);
 const supplyKey = PrivateKey.generateECDSA();
 
 async function main() {
-	//Create the NFT
+	
 	let nftCreate = await new TokenCreateTransaction()
-		.setTokenName("THE Computer BOY")
-		.setTokenSymbol("The Thunder of winterland")
+		.setTokenName("The Queen of Seven kingdom")
+		.setTokenSymbol("SEVKING")
 		.setTokenType(TokenType.NonFungibleUnique)
 		.setDecimals(0)
 		.setInitialSupply(0)
@@ -42,12 +42,12 @@ async function main() {
 
 	
 	
-	// CID = "ipfs://QmY4gCGS2DoGLvGW8sGeaxxggjYYPC385DpASiQJ8qNwFu";
-	CID = "ipfs://QmawqbzosvBJLunXQRH8QcA2xwfM6dPSK3nhqVpdR3Yump";
+	
+	CID = "ipfs://Qmcn6kFRgxnmM5nSpApcrAiKcdYCojFS2gRokanpgL9Afp";
 	
 	
     
-	// // Mint new NFT
+	
 	let mintTx = await new TokenMintTransaction()
 		.setTokenId(tokenId)
         .setMaxTransactionFee(3)
@@ -61,7 +61,7 @@ async function main() {
 	let mintRx = await mintTxSubmit.getReceipt(client);
 	console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials[0].low} \n`);
 	
-
+	
 
 }
 main();
