@@ -10,6 +10,7 @@ const {
 	TransferTransaction,
 	AccountBalanceQuery,
 	TokenAssociateTransaction,
+	CustomFixedFee
 } = require("@hashgraph/sdk");
 
 
@@ -18,18 +19,29 @@ const operatorKey = PrivateKey.fromStringECDSA(process.env.OPERATOR_PVKEY);
 const client = Client.forTestnet().setOperator(operatorId, operatorKey);
 
 const supplyKey = PrivateKey.generateECDSA();
-
+// 
+		//Create a custom token fractional fee
+		
+		//Version: 2.0.30
+// 
 async function main() {
 	
+	// let nftCustomFee = await new CustomFixedFee()
+	// 		.setAmount(100) // 1 token is transferred to the fee collecting account each time this token is transferred
+	// 		// .setDenominatingTokenId(tokenId) // The token to charge the fee in
+	// 		.setFeeCollectorAccountId(operatorId); // 1 token is sent to this account everytime it is transferred
+		 
 	let nftCreate = await new TokenCreateTransaction()
-		.setTokenName("The Queen of Seven kingdom")
-		.setTokenSymbol("SEVKING")
+		.setTokenName("Genesis Spherahead #1001")
+		.setTokenSymbol("GEN")
+		.setTokenSymbol("GEN")
 		.setTokenType(TokenType.NonFungibleUnique)
 		.setDecimals(0)
 		.setInitialSupply(0)
 		.setTreasuryAccountId(operatorId)
 		.setSupplyType(TokenSupplyType.Finite)
 		.setMaxSupply(250)
+		// .setCustomFees([nftCustomFee])
 		.setSupplyKey(supplyKey)
 		.freezeWith(client);
 
@@ -43,7 +55,7 @@ async function main() {
 	
 	
 	
-	CID = "ipfs://Qmcn6kFRgxnmM5nSpApcrAiKcdYCojFS2gRokanpgL9Afp";
+	CID = "ipfs://QmaBtD4GatsRuVqXeoWnEa8twqKGXRKARKABTS2Vm2AJSm";
 	
 	
     

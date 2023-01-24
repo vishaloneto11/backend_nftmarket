@@ -20,6 +20,9 @@ const client = Client.forTestnet().setOperator(operatorId, operatorKey);
 const supplyKey = PrivateKey.generateECDSA();
 
 async function main() {
+	
+	
+
 	const getNewBalance = await new AccountBalanceQuery()
         .setAccountId(operatorId)
         .execute(client);
